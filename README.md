@@ -16,7 +16,7 @@ A lightweight, zero-installation Windows Batch utility to retrieve detailed hard
   - **Network:** Physical adapters and MAC addresses.
 
 ## 🚀 Quick Start
-1. Download the `HW-Audit.bat`.
+1. Download the `Hardware-Audit.bat`.
 2. Right-click and **Run as Administrator** (recommended for full serial number access).
 3. View your specs directly in the command prompt.
 

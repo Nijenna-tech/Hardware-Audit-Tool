@@ -14,30 +14,30 @@ echo ============================================================
 echo   SYSTEM: %pcname%  ^|  UPTIME: %up_d% Tage, %up_h% Stunden
 echo ============================================================
 
-echo [MAINBOARD]
+echo [Motherboard]
 powershell -command "Get-CimInstance Win32_BaseBoard | foreach { write-host '  ' $_.Manufacturer $_.Product }"
-
-echo [PROZESSOR]
+echo.
+echo [Processor]
 powershell -command "Get-CimInstance Win32_Processor | foreach { write-host '  ' $_.Name }"
-
-echo [ARBEITSSPEICHER]
+echo.
+echo [Memory]
 powershell -command "Get-CimInstance Win32_PhysicalMemory | foreach { write-host '  ' ($_.Capacity / 1GB) 'GB -' $_.Speed 'MHz -' $_.Manufacturer }"
-
-echo [GRAFIKKARTE]
+echo.
+echo [Grafics card]
 powershell -command "Get-CimInstance Win32_VideoController | foreach { write-host '  ' $_.Name ' (Driver:' $_.DriverVersion ')' }"
-
-echo [FESTPLATTEN]
+echo.
+echo [Disks]
 powershell -command "Get-CimInstance Win32_DiskDrive | foreach { write-host '  ' $_.Model '[' ([math]::Round($_.Size / 1GB, 2)) 'GB]' }"
-
-echo [AUDIO]
+echo.
+echo [Audio]
 powershell -command "Get-CimInstance Win32_SoundDevice | foreach { write-host '  ' $_.Name ' (' $_.Manufacturer ')' }"
-
-echo [BIOS]
+echo.
+echo [Bios]
 powershell -command "Get-CimInstance Win32_BIOS | foreach { write-host '  ' $_.Manufacturer '-' $_.SMBIOSBIOSVersion }"
-
-echo [NETZWERK]
+echo.
+echo [Network]
 powershell -command "Get-CimInstance Win32_NetworkAdapter -Filter 'PhysicalAdapter=True' | foreach { if($_.MACAddress) { write-host '  ' $_.Name '->' $_.MACAddress } }"
-
+echo.
 echo ============================================================
-echo Abfrage beendet: %date% %time%
+echo Endtime: %date% %time%
 pause

@@ -3,6 +3,7 @@
 A lightweight, zero-installation Windows Batch utility to retrieve detailed hardware information instantly. This tool bypasses the deprecated `wmic` and uses modern PowerShell/CIM queries to provide a clean, compact overview of your system.
 
 ## ✨ Features
+- **EXE File with cert:** Install cert for .exe usage, looks better. :)
 - **Zero Footprint:** No installation required, just run the `.bat` file.
 - **Modern Backend:** Uses PowerShell `Get-CimInstance` for future-proof compatibility with Windows 11.
 - **Smart Uptime:** Displays system boot time and PC identity.
